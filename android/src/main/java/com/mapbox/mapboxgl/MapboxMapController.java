@@ -847,7 +847,6 @@ final class MapboxMapController
       case "map#setTelemetryEnabled":
         {
           final boolean enabled = call.argument("enabled");
-          Mapbox.getTelemetry().setUserTelemetryRequestState(enabled);
           result.success(null);
           break;
         }

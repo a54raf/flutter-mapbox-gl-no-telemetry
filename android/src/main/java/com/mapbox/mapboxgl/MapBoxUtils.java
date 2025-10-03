@@ -13,6 +13,10 @@ abstract class MapBoxUtils {
 
   static Mapbox getMapbox(Context context, String accessToken) {
     return Mapbox.getInstance(context, accessToken == null ? getAccessToken(context) : accessToken);
+    Mapbox mapbox = Mapbox.getInstance(context, accessToken == null ? getAccessToken(context) : accessToken);
+    // Remove telemetry initialization by skipping Mapbox.getTelemetry()
+    return mapbox;
+	
   }
 
   private static String getAccessToken(@NonNull Context context) {
